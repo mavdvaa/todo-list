@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f5f1">
+    <title>Мой список задач</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="topbar">
+            <span class="date-label" id="today-date"></span>
+        </header>
+
+        <section class="intro" aria-labelledby="page-title">
+            <p class="eyebrow">ВАШЕ ЛИЧНОЕ ПРОСТРАНСТВО ДЛЯ ДЕЛ</p>
+            <h1 id="page-title">Порядок начинается<br>с <span>одного шага.</span></h1>
+            <p class="intro-copy">Запишите важное. Остальное подождёт.</p>
+        </section>
+
+        <section class="task-panel" aria-label="Список задач">
+            <div class="panel-heading">
+                <div>
+                    <p class="section-kicker">НА СЕГОДНЯ</p>
+                    <h2>Мои задачи <span class="task-count" id="task-count">0</span></h2>
+                </div>
+                <div class="progress" aria-label="Прогресс выполнения">
+                    <span class="progress-value" id="progress-value">0%</span>
+                    <div class="progress-track">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="task-form" id="task-form">
+                <label class="sr-only" for="task-input">Новая задача</label>
+                <input
+                    id="task-input"
+                    name="task"
+                    type="text"
+                    maxlength="120"
+                    placeholder="Например, прогуляться после обеда"
+                    autocomplete="off"
+                >
+                <button class="add-button" type="submit">
+                    <span aria-hidden="true">+</span>
+                    <span>Добавить</span>
+                </button>
+            </form>
+
+            <div class="list-toolbar">
+                <div class="filters" role="group" aria-label="Фильтр задач">
+                    <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Все</button>
+                    <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Активные</button>
+                    <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Готово</button>
+                </div>
+                <button class="clear-button" id="clear-completed" type="button" disabled>Удалить выполненные</button>
+            </div>
+
+            <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+            <ul class="task-list" id="task-list" aria-live="polite"></ul>
+
+            <footer class="panel-footer">
+                <span class="footer-dot" aria-hidden="true"></span>
+                <span>Ваши задачи сохраняются в базе данных</span>
+            </footer>
+        </section>
+
+        <p class="closing-note">Не нужно успеть всё. Достаточно начать.</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

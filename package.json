@@ -1,0 +1,14 @@
+{
+  "name": "quiet-plan",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.4"
+  }
+}
